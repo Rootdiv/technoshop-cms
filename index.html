@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CMS Techno Shop</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script type="module" src="js/index.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="mb-3">Приложение для управления товарами</h1>
+      <button type="button" class="modal-open-btn btn btn-success d-block mb-3 ms-auto">Добавить товар</button>
+      <div class="table-responsive">
+        <table class="table table-bordered">
+          <thead class="table-light wrapper-sort">
+            <tr>
+              <th>
+                <button class="btn-sort btn btn-link w-100 h-100 text-decoration-none" data-sort="id">id</button>
+              </th>
+              <th>
+                <button class="btn-sort btn btn-link w-100 h-100 text-decoration-none" data-sort="title">
+                  Наименование товара
+                </button>
+              </th>
+              <th>
+                <button class="btn-sort btn btn-link w-100 h-100 text-decoration-none" data-sort="category">
+                  Категория
+                </button>
+              </th>
+              <th>
+                <button class="btn-sort btn btn-link w-100 h-100 text-decoration-none" data-sort="price">
+                  Стоимость
+                </button>
+              </th>
+            </tr>
+          </thead>
+          <tbody class="table-group-divider table-goods">
+            <tr class="table-row table-goods-item" data-id="7111405855">
+              <td>7111405855</td>
+              <td>Смартфон realme 9 Pro+ 6/128 ГБ, черный</td>
+              <td>smartphone</td>
+              <td class="text-end">25 990 &#8381;</td>
+              <td class="d-flex">
+                <button class="btn-table btn-delete">
+                  <svg width="30" height="30">
+                    <use href="#delete" />
+                  </svg>
+                </button>
+              </td>
+            </tr>
+            <tr class="table-row table-goods-item" data-id="3184803604">
+              <td>3184803604</td>
+              <td>Ноутбук Microsoft Surface Laptop Studio 14,4 Intel Core i5 16GB 256GB</td>
+              <td>notebook</td>
+              <td class="text-end">199 990 &#8381;</td>
+              <td class="d-flex">
+                <button class="btn-table btn-delete">
+                  <svg width="30" height="30">
+                    <use href="#delete" />
+                  </svg>
+                </button>
+              </td>
+            </tr>
+            <tr class="table-row table-goods-item" data-id="4836741835">
+              <td>4836741835</td>
+              <td>Умные часы Xiaomi Redmi Watch 2 Lite Global, слоновая кость</td>
+              <td>smartwatch</td>
+              <td class="text-end">4 990 &#8381;</td>
+              <td class="d-flex">
+                <button class="btn-table btn-delete">
+                  <svg width="30" height="30">
+                    <use href="#delete" />
+                  </svg>
+                </button>
+              </td>
+            </tr>
+            <tr class="table-row table-goods-item" data-id="1438035231">
+              <td>1438035231</td>
+              <td>Планшет HUAWEI MatePad Pro 10.8, 8 ГБ/128 ГБ, со стилусом, полночный серый</td>
+              <td>tablets</td>
+              <td class="text-end">49 989 &#8381;</td>
+              <td class="d-flex">
+                <button class="btn-table btn-delete">
+                  <svg width="30" height="30">
+                    <use href="#delete" />
+                  </svg>
+                </button>
+              </td>
+            </tr>
+            <tr class="table-row table-goods-item" data-id="5202626410">
+              <td>5202626410</td>
+              <td>23.8" Моноблок MSI Pro AP241 11M-277RU, черный</td>
+              <td>notebook</td>
+              <td class="text-end">118 755 &#8381;</td>
+              <td class="d-flex">
+                <button class="btn-table btn-delete">
+                  <svg width="30" height="30">
+                    <use href="#delete" />
+                  </svg>
+                </button>
+              </td>
+            </tr>
+            <tr class="table-row table-goods-item" data-id="8180282600">
+              <td>8180282600</td>
+              <td>ТВ-приставка Apple TV 4K 64GB</td>
+              <td>smart</td>
+              <td class="text-end">27 990 &#8381;</td>
+              <td class="d-flex">
+                <button class="btn-table btn-delete">
+                  <svg width="30" height="30">
+                    <use href="#delete" />
+                  </svg>
+                </button>
+              </td>
+            </tr>
+            <tr class="table-row table-goods-item" data-id="2206922442">
+              <td>2206922442</td>
+              <td>27" Монитор Alienware AW2720HFA, 1920x1080, 240 Гц, IPS, черный</td>
+              <td>monitor</td>
+              <td class="text-end">51 797 &#8381;</td>
+              <td class="d-flex">
+                <button class="btn-table btn-delete">
+                  <svg width="30" height="30">
+                    <use href="#delete" />
+                  </svg>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="modal">
+          <div class="modal-dialog">
+            <form class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" name="header">Добавить новый товар</h5>
+                <button type="button" class="btn-close" aria-label="Закрыть модальное окно"></button>
+              </div>
+              <div class="modal-body">
+                <div class="row g-3">
+                  <div class="col-12 col-sm-6">
+                    <input type="text" class="form-control" name="title" placeholder="Наименование"
+                      aria-label="Наименование товара" required />
+                  </div>
+                  <div class="col-12 col-sm-6">
+                    <input type="text" class="form-control" name="category" list="category" placeholder="Категория"
+                      aria-label="Категория товара(eng/rus)" required />
+                    <datalist id="category">
+                      <option value="phone"></option>
+                      <option value="car"></option>
+                      <option value="bike"></option>
+                      <option value="fruit"></option>
+                      <option value="house"></option>
+                    </datalist>
+                  </div>
+                  <div class="col-12">
+                    <textarea type="text" class="form-control" name="description" placeholder="Описание"
+                      aria-label="Описание товара" rows="5" required></textarea>
+                  </div>
+                  <div class="col-12 col-sm-6">
+                    <input type="number" class="form-control" name="display" step="0.01" placeholder="Экран"
+                      aria-label="Размер экрана" />
+                  </div>
+                  <div class="col-12 col-sm-6">
+                    <input type="number" class="form-control" min="1" step="1" name="price" placeholder="Цена"
+                      aria-label="Цена товара" required />
+                  </div>
+                </div>
+                <hr />
+                <label tabindex="0" for="image" class="btn btn-primary d-block mx-auto">Добавить изображение</label>
+                <input class="visually-hidden" tabindex="-1" type="file" name="image" id="image" />
+                <input type="hidden" name="imagesave" />
+                <div class="wrapper-preview">
+                  <img class="preview" />
+                </div>
+              </div>
+              <div class="modal-footer">
+                <input type="hidden" name="id" />
+                <button type="submit" class="btn btn-primary modal-submit-btn">Добавить товар</button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <svg style="display: none">
+          <symbol id="edit" viewBox="0 0 30 30" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="m8.75 21.266 5.516-.018 12.04-11.926c.473-.472.733-1.1.733-1.767 0-.667-.26-1.295-.733-1.768l-1.982-1.982c-.945-.945-2.594-.94-3.532-.004L8.75 15.73v5.537ZM22.556 5.573l1.986 1.978-1.996 1.978-1.982-1.981 1.992-1.976ZM11.25 16.77l7.538-7.466 1.982 1.982-7.536 7.464-1.984.006v-1.986Z" />
+            <path
+              d="M6.25 26.25h17.5c1.379 0 2.5-1.121 2.5-2.5V12.915l-2.5 2.5v8.335H10.197c-.032 0-.066.012-.098.012-.042 0-.083-.01-.125-.012H6.25V6.25h8.559l2.5-2.5H6.25a2.503 2.503 0 0 0-2.5 2.5v17.5c0 1.379 1.121 2.5 2.5 2.5Z" />
+          </symbol>
+          <symbol id="delete" viewBox="0 0 30 30" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M12.75 6h4.5a2.25 2.25 0 0 0-4.5 0Zm-1.5 0a3.75 3.75 0 0 1 7.5 0h7.5a.75.75 0 1 1 0 1.5h-1.581l-1.791 15.516A4.5 4.5 0 0 1 18.408 27h-6.816a4.5 4.5 0 0 1-4.47-3.984L5.331 7.5H3.75a.75.75 0 0 1 0-1.5h7.5Zm2.25 6a.75.75 0 1 0-1.5 0v9a.75.75 0 1 0 1.5 0v-9Zm3.75-.75a.75.75 0 0 0-.75.75v9a.75.75 0 1 0 1.5 0v-9a.75.75 0 0 0-.75-.75Z" />
+          </symbol>
+        </svg>
+      </div>
+    </div>
+  </body>
+</html>
