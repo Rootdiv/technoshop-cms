@@ -12,3 +12,6 @@ export const toBase64 = file => {
     reader.readAsDataURL(file);
   });
 };
+
+export const currencyFormatRUB = number =>
+  new Intl.NumberFormat('ru-RU', { style: 'currency', currency: 'RUB', maximumFractionDigits: 0 }).format(number);
