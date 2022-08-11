@@ -1,10 +1,10 @@
 import { tableGoods } from './elems.js';
 import { currencyFormatRUB } from './utils.js';
 
-const createRow = ({ id, title, category, price }) => {
-  const tr = document.createElement('tr');
-  tr.className = 'table-row table-goods-item';
-  tr.dataset.id = id;
+export const renderRow = ({ id, title, category, price }) => {
+  const rowGoods = document.createElement('tr');
+  rowGoods.className = 'table-row table-goods-item';
+  rowGoods.dataset.id = id;
   const tdId = document.createElement('td');
   tdId.textContent = id;
   const tdTitle = document.createElement('td');
@@ -17,6 +17,7 @@ const createRow = ({ id, title, category, price }) => {
   tdButton.className = 'd-flex';
   const button = document.createElement('button');
   button.className = 'btn-table btn-delete';
+  button.dataset.id = id;
   button.insertAdjacentHTML(
     'afterbegin',
     `<svg width="30" height="30">
@@ -24,12 +25,11 @@ const createRow = ({ id, title, category, price }) => {
     </svg>`,
   );
   tdButton.append(button);
-  tr.append(tdId, tdTitle, tdCategory, tdPrice, tdButton);
-  return tr;
+  rowGoods.append(tdId, tdTitle, tdCategory, tdPrice, tdButton);
+  tableGoods.append(rowGoods);
 };
 
 export const tableRender = goods => {
   tableGoods.textContent = '';
-  const rows = goods.map(createRow);
-  tableGoods.append(...rows);
+  goods.forEach(renderRow);
 };
