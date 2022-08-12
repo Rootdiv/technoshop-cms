@@ -12,6 +12,15 @@ export const postGoods = data =>
     body: JSON.stringify(data),
   }).then(response => response.json());
 
+export const editGoods = data =>
+  fetch(`${API_URI}/api/goods/${data.id}`, {
+    method: 'PATCH',
+    headers: {
+      'content-type': 'application/json',
+    },
+    body: JSON.stringify(data),
+  }).then(response => response.json());
+
 export const getCategory = () => fetch(`${API_URI}/api/category`).then(response => response.json());
 
 export const deleteProduct = id =>
