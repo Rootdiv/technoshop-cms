@@ -1,7 +1,6 @@
 import { form, modal, modalSubmitBtn, modalTitle } from './elems.js';
 import { fillingForm } from './formController.js';
 import { hidePreview } from './previewController.js';
-import { deleteGoods } from './tableController.js';
 
 const openModal = id => {
   if (id) {
@@ -39,8 +38,6 @@ export const modalController = ({ modalBtn, delegation }) => {
         modalTitle.textContent = `Изменить товар #${rowGoods.dataset.id}`;
         modalSubmitBtn.textContent = 'Изменить товар';
         openModal(rowGoods.dataset.id);
-      } else if (targetExclude) {
-        deleteGoods(rowGoods);
       }
     });
   }

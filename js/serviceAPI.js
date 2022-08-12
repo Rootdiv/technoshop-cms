@@ -14,4 +14,10 @@ export const postGoods = data =>
 
 export const getCategory = () => fetch(`${API_URI}/api/category`).then(response => response.json());
 
-export const deleteProduct = id => fetch(`${API_URI}/api/goods/${id}`, { method: 'DELETE' });
+export const deleteProduct = id =>
+  fetch(`${API_URI}/api/goods/${id}`, {
+    method: 'DELETE',
+    headers: {
+      'content-type': 'application/json',
+    },
+  }).then(response => response.json());

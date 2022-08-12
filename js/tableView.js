@@ -17,7 +17,6 @@ export const renderRow = ({ id, title, category, price }) => {
   tdButton.className = 'd-flex';
   const button = document.createElement('button');
   button.className = 'btn-table btn-delete';
-  button.dataset.id = id;
   button.insertAdjacentHTML(
     'afterbegin',
     `<svg width="30" height="30">

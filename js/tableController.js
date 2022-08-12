@@ -3,11 +3,6 @@ import { tableRender } from './tableView.js';
 import { modalController } from './modalController.js';
 import { tableGoods } from './elems.js';
 
-export const deleteGoods = async rowGoods => {
-  deleteProduct(rowGoods.dataset.id);
-  rowGoods.remove();
-};
-
 export const tableController = async () => {
   modalController({
     delegation: {
@@ -16,6 +11,18 @@ export const tableController = async () => {
       targetExclude: '.btn-delete',
     },
   });
+
+  tableGoods.addEventListener('click', async ({ target }) => {
+    const btnDelete = target.closest('.btn-delete');
+    if (btnDelete) {
+      const row = btnDelete.closest('.table-goods-item');
+      const isDel = await deleteProduct(row.dataset.id);
+      if (isDel) {
+        row.remove();
+      }
+    }
+  });
+
   const goods = await getGoods();
   tableRender(goods);
 };
